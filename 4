@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+int factorial(int N)
+{
+	if (N == 0) 
+	{
+		return 1;
+	}
+	if (N < 0)
+	{
+		return -1;
+	}
+
+	int result = 1;
+	for (int i = 1; i <= N; i++)
+	{
+		result *= i;
+	}
+	return result;
+}
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	cout <<factorial(5);
+}
+
+
+
+
