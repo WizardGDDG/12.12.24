@@ -1,0 +1,49 @@
+#include <random>
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+	random_device rd;
+	mt19937 gen(rd());
+	uniform_int_distribution<> distrib(1, 6);
+	int comp = 0;
+	int player = 0;
+	bool vibor;
+	cout << "Кто первый ходит?";
+	cout << "\n0) Компьютер ";
+	cout << "\n1) Игрок ";
+	cin >> vibor;
+
+	
+
+    bool playerTurn = (vibor == 'p');
+
+    for (int i = 0; i < 5; ++i)
+    {
+        std::cout << "\n--- Бросок " << i + 1 << " ---\n";
+
+        if (playerTurn) {
+            std::cout << "Ваш ход:\n";
+            int roll = distrib(gen);
+            player += roll;
+            std::cout << "Выпало: " << roll << "\n";
+        }
+        else {
+            std::cout << "Ход компьютера:\n";
+            int roll = distrib(gen);
+            comp += roll;
+            std::cout << "Компьютер выбросил: " << roll << "\n";
+        }
+
+        // Переключаем ход
+        playerTurn = !playerTurn;
+    }
+	cout << "comp = " << comp;
+	cout << "\nplayer = " << player;
+}
+
+
+
+
