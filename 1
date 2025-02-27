@@ -3,14 +3,17 @@
 using namespace std;
 string conversion_to_number_system(int number, int base)
 {
-    if (number < 0) {
+    if (number < 0) 
+    {
         cout << "Число меньше нуля";
     }
-    if (base < 2 || base > 36) {
+    if (base < 2 || base > 36) 
+    {
         cout << "Система счисления в которую вы хотите перевести должно быть больше равно 2 или 36";
     }
 
-    if (number == 0) {
+    if (number == 0) 
+    {
         return "0";
     }
     string numbers = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
